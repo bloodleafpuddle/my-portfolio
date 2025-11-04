@@ -18,6 +18,9 @@ section h2 {
     margin-bottom: 2rem;
     padding-top: 1rem;
     font-size: 2.5rem;
+    text-decoration: underline;
+    text-underline-offset: 13px;
+    text-decoration-thickness: 2px;
 }
 
 section p {

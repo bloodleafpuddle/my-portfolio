@@ -50,3 +50,23 @@
 .contact-form button[type="submit"]:hover {
     background-color: #555;
 }
+
+#userInfo {
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  min-height: 60px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  margin: 18px auto 0 auto;
+  font-family: "comforta";
+  text-align: center;
+  color: #333;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
