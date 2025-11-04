@@ -19,31 +19,44 @@ html {
     scroll-behavior: smooth;
 }
 
-header {
+.site-header {
     color: #ebebeb;
-    background: linear-gradient(to bottom, #1d1d1df1,#2e2e2ef1); 
+    background: linear-gradient(to bottom, #1d1d1df1, #2e2e2ef1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    padding: 30px 60px;
     text-align: center;
-    padding: 40px 0 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    position: relative;
 }
 
-.header-logo {
-    position: absolute; 
-    top: 50%; 
-    left: 10%; 
-    transform: translate(-50%, -70%); 
-    width: 350px;
-    opacity: 0.3; 
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.35;
+    flex-shrink: 0;
+    transform: translateY(-10px);
 }
 
 .site-title {
     font-size: 50px;
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin: 0;
     font-family: "comforta";
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.60);
-    position: relative; 
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    white-space: nowrap;
 }
 
 .header-divider {
@@ -51,22 +64,22 @@ header {
     height: 2px;
     background: rgba(185, 185, 185, 0.12);
     border: none;
-    margin: 0.4rem auto;
+    margin: 0.6rem auto;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
-
-header nav ul {
+.main-nav ul {
     list-style: none;
-    display: flex;    
+    display: flex;
     justify-content: center;
-    margin-top: 25px; 
     gap: 1rem;
+    margin: 25px 0 0 0;
+    padding: 0;
 }
 
-header nav ul li {
-    margin: 0 1.25rem;
-    text-align: center; 
+.main-nav li {
+    margin: 0;
+    text-align: center;
 }
 
 .nav-link:link, 
@@ -98,7 +111,7 @@ main {
 section {
     padding: 3.5rem 0;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1250px;
     background-color: rgba(182, 182, 182, 0.9);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -125,19 +138,21 @@ section p {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    gap: 50px 60px;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
 }
 
 .project-card {
     background-color: rgba(209, 209, 209, 0.9);
-    padding: 25px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     transform-origin: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .project-card:hover {
@@ -185,6 +200,40 @@ section p {
     color: #fff;
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.project-card.flipped {
+    transform: rotateY(180deg);
+    transition: transform 0.8s ease-in-out;
+}
+
+.card-back {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(209, 209, 209);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: rotateY(180deg);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+.card-back p {
+    margin-bottom: auto;
+}
+
+.card-back .toggle-btn {
+    align-self: flex-start;
+    margin-top: 15px;
 }
 
 .contact-form {
@@ -253,13 +302,25 @@ footer {
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 25px 0 15px 0;
+    .site-header {
+        padding: 80px 0 40px 0;
     }
 
-    header h1 {
-        font-size: 2.5rem;
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 100px;
+        opacity: 0.4;
+    }
+
+    .site-title {
+        font-size: 2rem;
         letter-spacing: 1px;
+        margin-top: 0.5rem;
+        text-align: center;
     }
 
     .header-divider {
@@ -267,14 +328,14 @@ footer {
         margin: 0.4rem auto 0.8rem auto;
     }
 
-    header nav ul {
+    .main-nav ul {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         margin-top: 15px;
     }
 
-    header nav ul li {
+    .main-nav li {
         margin: 0;
     }
 
@@ -282,7 +343,7 @@ footer {
     .nav-link:visited {
         display: block;
         padding: 0.9rem 0;
-        width: 90vw   
+        width: 90vw;
     }
 
     main {
@@ -292,6 +353,12 @@ footer {
     section {
         padding: 2rem 0.5rem;
         margin-bottom: 3rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 90%;
     }
 
     section h2 {

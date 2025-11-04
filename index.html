@@ -8,20 +8,24 @@
     <link rel="icon" type="image/png" href="css/FaviconL.png">
 </head>
 <body>
-    <header>
-        <img src="css/FaviconL.png" alt="Site Logo" class="header-logo">
-        <div class="site-title">
-        <h1>Autumn Gun-Munro</h1>
-        </div>
-        <hr class="header-divider">
-        <nav>
-            <ul>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="site-header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="css/FaviconL.png" alt="Site Logo">
+    </div>
+    <h1 class="site-title">Autumn Gun-Munro</h1>
+  </div>
+
+  <hr class="header-divider">
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main>
 
@@ -36,20 +40,31 @@
             <h2>Projects</h2>
             <p>Some projects I've done:</p>
             <div class="project-grid">
-                <div class="project-card">
-                    <img src="css/outforlunch.jpg" alt="placeholder" class="project-img">
-                    <h3>Project Title Here</h3>
-                    <p>Information goes here</p>
-                    <a href="#" target="_blank">View Project</a>
-                </div>
-                <div class="project-card">
-                    <img src="css/outforlunch.jpg" alt="placeholder" class="project-img">
-                    <h3>Project Title Here</h3>
-                    <p>Information goes here</p>
-                    <a href="#" target="_blank">View Project</a>
-                </div>
-            </div>
 
+                <div class="project-card">
+                    <img src="css/outforlunch.jpg" alt="placeholder" class="project-img">
+                    <h3>Project Title Here</h3>
+                    <p>Brief subtitle</p>
+                    <a href="#" class="toggle-btn show">Show Details</a>
+                        <div class="card-back">
+                        <p>Detailed description goes here</p>
+                        <a href="#" class="toggle-btn hide">Hide Details</a>
+                        </div>
+                </div>
+                
+
+                <div class="project-card">
+                    <img src="css/outforlunch.jpg" alt="placeholder" class="project-img">
+                    <h3>Project Title Here</h3>
+                    <p>Brief subtitle</p>
+                    <a href="#" class="toggle-btn show">Show Details</a>
+                        <div class="card-back">
+                        <p>Detailed description goes here</p>
+                        <a href="#" class="toggle-btn hide">Hide Details</a>
+                        </div>
+                </div>
+
+            </div>
         </section>
 
         <section id="contact">
@@ -81,5 +96,6 @@
         &copy; Autumn Gun-Munro, 2025
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
