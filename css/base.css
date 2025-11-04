@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "comforta";
+    src: url(/font/Comfortaa-Bold.ttf);
+}
+
+body {
+    color: #333;
+    background: url(/images/cracked-cement.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "comforta";
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}

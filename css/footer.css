@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #2e2e2e;
+    color: #b9b9b9;
+    letter-spacing: 2px;
+    font-family: "comforta";
+    font-size: 14px;
+    margin-top: auto;
+    background: linear-gradient(to top, #1d1d1df1,#2e2e2ef1); 
+}

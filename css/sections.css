@@ -1,0 +1,31 @@
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+}
+
+section {
+    padding: 3.5rem 0;
+    margin: 0 auto;
+    max-width: 1250px;
+    background-color: rgba(182, 182, 182, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-bottom: 5rem;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    font-size: 2.5rem;
+}
+
+section p {
+    padding: 0 5rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#about p {
+    text-align: left;
+}

@@ -1,0 +1,100 @@
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px 60px;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.project-card {
+    background-color: rgba(209, 209, 209, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transform-origin: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.project-card p {
+    padding: 0; 
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.project-card a {
+    display: inline-block; 
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: linear-gradient(to bottom, #5a5a5a, #3c3c3c);
+    color: #ebebeb;
+    text-decoration: none;
+    border-radius: 6px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.25s ease;
+}
+
+.project-card a:hover {
+    background: linear-gradient(to bottom, #7a7a7a, #555);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.project-card.flipped {
+    transform: rotateY(180deg);
+    transition: transform 0.8s ease-in-out;
+}
+
+.card-back {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(209, 209, 209);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: rotateY(180deg);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+.card-back p {
+    margin-bottom: auto;
+}
+
+.card-back .toggle-btn {
+    align-self: flex-start;
+    margin-top: 15px;
+}
