@@ -1,11 +1,11 @@
 @font-face {
     font-family: "comforta";
-    src: url(/font/Comfortaa-Bold.ttf);
+    src: url(../font/Comfortaa-Bold.ttf);
 }
 
 body {
     color: #333;
-    background: url(/images/cracked-cement.jpg);
+    background: url(../images/cracked-cement.jpg);
     background-size: cover;
     background-attachment: fixed;
     font-family: "comforta";
