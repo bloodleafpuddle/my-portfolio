@@ -6,3 +6,37 @@ function displayLocalDateTime(){const now=new Date();const formatted=now.toLocal
 setInterval(displayLocalDateTime,1000);displayLocalDateTime();if("geolocation" in navigator){navigator.geolocation.getCurrentPosition(function(position){const latitude=position.coords.latitude;const longitude=position.coords.longitude;fetch("https://nominatim.openstreetmap.org/reverse?lat="+latitude+"&lon="+longitude+"&format=json").then(function(response){if(!response.ok){throw new Error("Network response was not ok")}
 return response.json()}).then(function(data){const city=data.address.city||data.address.town||data.address.village||"";const country=data.address.country||"";const infoEl=document.getElementById("userInfo");const locationText="<br>Location: "+(city?city+", ":"")+country;infoEl.dataset.location=locationText;infoEl.innerHTML+=locationText}).catch(function(error){console.error("Error fetching location:",error)})},function(){const infoEl=document.getElementById("userInfo");infoEl.dataset.location="<br>Location: (Permission denied)";infoEl.innerHTML+=infoEl.dataset.location})}else{const infoEl=document.getElementById("userInfo");infoEl.dataset.location="<br>Location: (Not supported)";infoEl.innerHTML+=infoEl.dataset.location}
 document.addEventListener("DOMContentLoaded",function(){const typedElement=document.querySelector("#typed-tagline");if(typedElement){setTimeout(()=>{new Typed("#typed-tagline",{strings:["Web Developer | Artist | Creator"],typeSpeed:50,backSpeed:0,loop:!1,showCursor:!0,cursorChar:"|",onComplete:function(){setTimeout(()=>{const cursor=document.querySelector(".typed-cursor");cursor.style.transition="opacity 1s ease";cursor.style.opacity="0";cursor.style.visibility="hidden"},2500)}})},2200)}});window.addEventListener("load",function(){document.body.classList.add("loaded");const fadeElements=document.querySelectorAll(".site-header, #about, #projects, #contact, footer");fadeElements.forEach(el=>el.classList.add("fade-in"))});const toggle=document.getElementById("btn");toggle.addEventListener("change",function(){document.body.classList.toggle("dark-mode",this.checked)})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterDropdown = document.getElementById('project-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterDropdown && projectCards.length > 0) {
+        
+        const applyFilter = (selectedCategory) => {
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                if (selectedCategory === 'all' || selectedCategory === cardCategory) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            const carousel = document.querySelector('.project-carousel');
+            if (carousel) {
+                carousel.scrollLeft = 0;
+            }
+        };
+
+
+        filterDropdown.addEventListener('change', (event) => {
+            const selectedCategory = event.target.value;
+            applyFilter(selectedCategory);
+        });
+
+
+        applyFilter(filterDropdown.value);
+    }
+});

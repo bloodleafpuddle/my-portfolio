@@ -59,6 +59,17 @@
         <section id="projects">
             <h2>Projects</h2>
             <p>Some projects I've done:</p>
+
+            <div class="filter-controls">
+                <label for="project-filter">Filter by:</label>
+                <select id="project-filter">
+                    <option value="all">All Projects</option>
+                    <option value="frontend">Front-End</option>
+                    <option value="gamedev">Game Dev</option>
+                    <option value="backend">Back-End</option>
+                </select>
+            </div>
+
             <div class="carousel-wrapper">
                 <button class="scroll-arrow left-arrow" aria-label="Scroll projects left">
                     &lt;
@@ -71,10 +82,10 @@
             <div class="project-carousel">
             <div class="project-grid">
 
-                <div class="project-card">
+                <div class="project-card" data-category="gamedev">
                     <img src="images/staywithmepls.png" alt="placeholder" class="project-img">
                     <h3>Stay with me...pls..</h3>
-                    <p>Pixel horror game (Godot)</p>
+                    <p>Game Dev: Pixel horror game (Godot)</p>
                     <a href="#" class="toggle-btn show">Show Details</a>
                         <div class="card-back">
                         <p>Stay with me...pls.. is a pixel horror game that I've been working on during my spare time using Godot engine! A top down game that grows in pace to defend a loved one from.. something.. equipped with jumpscares, soon to be inclusive settings, and some comforting yet unsettling art.</p>
@@ -83,7 +94,7 @@
                 </div>
                 
 
-                <div class="project-card">
+                <div class="project-card" data-category="all">
                     <img src="images/outforlunch.jpg" alt="placeholder" class="project-img">
                     <h3>Project Title Here</h3>
                     <p>Brief subtitle</p>
