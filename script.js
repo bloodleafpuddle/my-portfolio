@@ -137,3 +137,11 @@ window.addEventListener("load", function() {
 
   fadeElements.forEach(el => el.classList.add("fade-in"));
 });
+
+
+
+const toggle = document.getElementById("btn");
+
+toggle.addEventListener("change", function() {
+  document.body.classList.toggle("dark-mode", this.checked);
+});
